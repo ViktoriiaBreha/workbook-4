@@ -7,6 +7,7 @@ public class Employee {
     String department;
     float payRate;
     float hoursWorked;
+    double punchInTime;
 
     public Employee(int employeeId, String name, String department, float payRate, float hoursWorked) {
         this.employeeId = employeeId;
@@ -14,6 +15,7 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+        this.punchInTime = 0;
     }
 
     public float getTotalPay() {
@@ -29,5 +31,20 @@ public class Employee {
         return Math.max(0, hoursWorked - 40);
     }
 
+    public void punchIn(double time) {
+        punchInTime = time;
+        System.out.println(name + " started at: " + punchInTime);
+    }
+
+    public void punchOut(double time) {
+        double hoursWor = time - punchInTime;
+        hoursWorked += hoursWor;
+        System.out.printf("Employee: %s finished at: %.2f and worked: %.2f hours\n", name, time, hoursWor);
+
+
+    }
+
 }
+
+
 

@@ -33,4 +33,34 @@ public class Room {
         return !occupied && !dirty;
 
     }
+
+    public void checkIn() {
+        if (!isAvailable()) {
+            System.out.println("This room is not available");
+        } else {
+            occupied = false;
+            dirty = false;
+            System.out.println("This room is available");
+        }
+    }
+
+    public void checkOut() {
+        if (!occupied && !dirty) {
+            System.out.println("Room is ready to be checked in");
+        } else if (!occupied && dirty) {
+            System.out.println("Need housekeeper's service");
+        }
+
+    }
+
+    public void cleanroom() {
+        if (!dirty) {
+            System.out.println("Room is cleaned");
+        } else {
+            dirty = true;
+            System.out.println("Need to be cleaned");
+
+        }
+    }
 }
+
