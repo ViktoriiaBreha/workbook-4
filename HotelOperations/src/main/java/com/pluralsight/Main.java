@@ -21,6 +21,9 @@ public class Main {
         Employee em1 = new Employee(4672, "Vika", "Manager", 24, 0);
         em1.punchIn(8.0);
         em1.punchOut(19.0);
+        em1.punchIn();
+        em1.punchOut();
+
         System.out.printf("Your salary: $%.2f", em1.getTotalPay());
     }
 }
