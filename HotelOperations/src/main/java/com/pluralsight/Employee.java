@@ -40,7 +40,7 @@ public class Employee {
 
     public void punchIn() {
         LocalDateTime now = LocalDateTime.now();
-        punchInTime = now.getHour() + now.getMinute() / 60.0;
+        punchInTime = (now.getHour()-1) + now.getMinute() / 60.0;
         System.out.printf("Employee: %s was punched in at: %.2f\n", name, punchInTime);
 
     }
